@@ -2,7 +2,7 @@ require 'convert_unit/base'
 
 module ConvertUnit
   class Length < Base
-    UNITS = ['kilometre', 'metre', 'centemetre', 'millimetre', 'nanometre', 'mile', 'yard', 'foot', 'inch', 'nauticalmile']
+    UNITS = %W[kilometre metre centemetre millimetre nanometre mile yard foot inch nauticalmile'].freeze
 
     attr_accessor :value, :unit
 
@@ -11,4 +11,3 @@ module ConvertUnit
     end
   end
 end
-
