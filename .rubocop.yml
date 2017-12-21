@@ -1,0 +1,33 @@
+AllCops:
+  Exclude:
+    - 'bin/**/*'
+    - 'spec/**/*'
+    - 'vendor/**/*'
+    - 'model_2_factory-rails.gemspec'
+
+Metrics/LineLength:
+  Max: 120
+
+Metrics/MethodLength:
+  Max: 15
+
+Style/BlockComments:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/ExtraSpacing:
+  AllowForAlignment: true
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/NumericLiterals:
+  Enabled: false
+
+Style/Next:
+  Enabled: false
+
+Style/FileName:
+  Enabled: false
