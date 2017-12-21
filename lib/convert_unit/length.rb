@@ -1,4 +1,5 @@
 require 'convert_unit/base'
+
 module ConvertUnit
   class Length < Base
     UNITS = ['kilometre', 'metre', 'centemetre', 'millimetre', 'nanometre', 'mile', 'yard', 'foot', 'inch', 'nauticalmile']
@@ -10,3 +11,4 @@ module ConvertUnit
     end
   end
 end
+

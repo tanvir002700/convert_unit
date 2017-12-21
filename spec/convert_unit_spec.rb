@@ -4,6 +4,10 @@ RSpec.describe ConvertUnit do
   end
 
   it "does something useful" do
-    expect(true).to eq(true)
+    expect(
+      ConvertUnit.constants.select { |k|
+        ConvertUnit.const_get(k).instance_of? Class
+      }
+    ).to eq([:Length])
   end
 end

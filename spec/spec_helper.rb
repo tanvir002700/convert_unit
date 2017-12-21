@@ -1,3 +1,5 @@
+$LOAD_PATH.unshift File.dirname(__FILE__)
+
 require "bundler/setup"
 require "convert_unit"
 
@@ -15,3 +17,4 @@ end
 
 require 'coveralls'
 Coveralls.wear!
+
