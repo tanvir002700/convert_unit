@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.org/tanvir002700/convert_unit.svg?branch=master)](https://travis-ci.org/tanvir002700/convert_unit)
-
+[![Coverage Status](https://coveralls.io/repos/github/tanvir002700/convert_unit/badge.svg?branch=master)](https://coveralls.io/github/tanvir002700/convert_unit?branch=master)
+[![Maintainability](https://api.codeclimate.com/v1/badges/6e3e7ff7c7b040d1680d/maintainability)](https://codeclimate.com/github/tanvir002700/convert_unit/maintainability)
 # ConvertUnit
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/convert_unit`. To experiment with that code, run `bin/console` for an interactive prompt.
