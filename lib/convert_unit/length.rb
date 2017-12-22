@@ -1,9 +1,11 @@
 require 'convert_unit/base'
+require 'convert_unit/pre_process/length/load_yml'
 
 module ConvertUnit
   class Length < Base
-    UNITS = %W[kilometre metre centemetre millimetre nanometre mile yard foot inch nauticalmile'].freeze
+    extend PreProcess::Length
 
+    UNITS = load_units
     attr_accessor :value, :unit
 
     def initialize(value, unit)
