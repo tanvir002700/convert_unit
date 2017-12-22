@@ -21,7 +21,7 @@ module ConvertUnit
       c_unit.downcase!
       unit_in_short = Length::UNITS_SHORT_FORM[c_unit] || c_unit
       raise ArgumentError, 'Unpossible conversion type' unless Length::UNITS.include?(unit_in_short)
-      convert_to(unit_in_short)
+      Length.new(convert_to(unit_in_short), unit_in_short)
     end
   end
 end

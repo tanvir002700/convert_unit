@@ -8,7 +8,7 @@ class Base
     @unit = unit.downcase
   end
 
-  def inspect 
+  def inspect
     "#{@value}#{@unit}"
   end
 
