@@ -1,8 +1,8 @@
-millimeters: mm
-centimeters: cm
-meters: m
-kilometers: km
-inches: in
+millimeter: mm
+centimeter: cm
+meter: m
+kilometer: km
+inche: in
 feet: ft
-yards: yd
-miles: mi
+yard: yd
+mile: mi

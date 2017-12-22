@@ -5,11 +5,14 @@ module ConvertUnit
   class Length < Base
     extend PreProcess::Length
 
+    UNITS_SHORT_FORM = load_units_short_form
     UNITS = load_units
+
     attr_accessor :value, :unit
 
     def initialize(value, unit)
-      super(value, unit, Length::UNITS)
+      unit_in_short = Length::UNITS_SHORT_FORM[unit] || unit
+      super(value, unit_in_short, Length::UNITS)
     end
   end
 end
