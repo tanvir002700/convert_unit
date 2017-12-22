@@ -8,6 +8,10 @@ class Base
     @unit = unit.downcase
   end
 
+  def inspect 
+    "#{@value}#{@unit}"
+  end
+
   protected
 
   def convert_to(c_unit)
