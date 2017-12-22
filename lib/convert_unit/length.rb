@@ -13,7 +13,15 @@ module ConvertUnit
 
     def initialize(value, unit)
       unit_in_short = Length::UNITS_SHORT_FORM[unit] || unit
+      @conversion_rate_for_one_unit = Length::CONVERSION_RATE
       super(value, unit_in_short, Length::UNITS)
+    end
+
+    def to(c_unit)
+      c_unit.downcase!
+      unit_in_short = Length::UNITS_SHORT_FORM[c_unit] || c_unit
+      raise ArgumentError, 'Unpossible conversion type' unless Length::UNITS.include?(unit_in_short)
+      convert_to(unit_in_short)
     end
   end
 end

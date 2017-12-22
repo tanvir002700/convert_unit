@@ -7,4 +7,10 @@ class Base
     @value = value
     @unit = unit.downcase
   end
+
+  protected
+
+  def convert_to(c_unit)
+    @conversion_rate_for_one_unit[unit][c_unit] * value
+  end
 end
