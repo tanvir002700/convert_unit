@@ -11,6 +11,11 @@ module ConvertUnit
         f = File.open(File.join(File.dirname(__FILE__), 'units.yml'))
         YAML.load(f)
       end
+
+      def load_conversion_rate
+        f = File.open(File.join(File.dirname(__FILE__), 'conversion_rate.yml'))
+        YAML.load(f)
+      end
     end
   end
 end

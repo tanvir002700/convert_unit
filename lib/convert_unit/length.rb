@@ -7,6 +7,7 @@ module ConvertUnit
 
     UNITS_SHORT_FORM = load_units_short_form
     UNITS = load_units
+    CONVERSION_RATE = load_conversion_rate
 
     attr_accessor :value, :unit
 
