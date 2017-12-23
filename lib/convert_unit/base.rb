@@ -15,6 +15,7 @@ class Base
   protected
 
   def convert_to(c_unit)
+    puts self
     @conversion_rate_for_one_unit[unit][c_unit] * value
   end
 end

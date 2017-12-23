@@ -1,5 +1,5 @@
 module ConvertUnit
-  RSpec.describe Length do
+  RSpec.describe Length, type: :class do
     context 'initiate object with wrong unit type argument' do
       it 'raise a TypeError' do
         expect{Length.new(1,2)}.to raise_error(TypeError, 'Invalid Unit Type')
@@ -28,6 +28,18 @@ module ConvertUnit
       it 'not raise any error' do
         expect{Length.new(1, 'km')}.to_not raise_error
       end
+    end
+  end
+
+  describe '.load_units_short_form' do
+    it 'return ruby hash of length unit short form' do
+      expect(Length::load_units_short_form).to eq({"millimeter"=>"mm", "centimeter"=>"cm", "meter"=>"m", "kilometer"=>"km", "inche"=>"in", "feet"=>"ft", "yard"=>"yd", "mile"=>"mi"})
+    end
+  end
+
+  describe '.load_units' do
+    it 'return list of valid units' do
+      expect(Length::load_units).to eq(['mm', 'cm', 'm', 'km', 'in', 'ft', 'yd', 'mi'])
     end
   end
 end
