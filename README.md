@@ -1,13 +1,13 @@
+# ConvertUnit
 [![Build Status](https://travis-ci.org/tanvir002700/convert_unit.svg?branch=master)](https://travis-ci.org/tanvir002700/convert_unit)
 [![Coverage Status](https://coveralls.io/repos/github/tanvir002700/convert_unit/badge.svg?branch=master)](https://coveralls.io/github/tanvir002700/convert_unit?branch=master)
 [![Maintainability](https://api.codeclimate.com/v1/badges/6e3e7ff7c7b040d1680d/maintainability)](https://codeclimate.com/github/tanvir002700/convert_unit/maintainability)
 [![GitHub last commit (branch)](https://img.shields.io/github/last-commit/tanvir002700/convert_unit/master.svg)](https://github.com/tanvir002700/convert_unit)
 [![license](https://img.shields.io/github/license/tanvir002700/convert_unit.svg)](https://github.com/tanvir002700/convert_unit/blob/master/LICENSE)
-# ConvertUnit
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/convert_unit`. To experiment with that code, run `bin/console` for an interactive prompt.
+## Introduction
 
-TODO: Delete this and the text above, and describe your gem
+A Ruby Library for dealing with different types of unit conversion.
 
 ## Installation
 
