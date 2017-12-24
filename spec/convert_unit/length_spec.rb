@@ -42,4 +42,23 @@ module ConvertUnit
       expect(Length::load_units).to eq(['mm', 'cm', 'm', 'km', 'in', 'ft', 'yd', 'mi'])
     end
   end
+
+  describe 'check equal method' do
+    let(:l1) { Length.new 3.1415678, 'mm' }
+    let(:l2) { Length.new 3.1415678, 'ft' }
+
+    it 'not equal' do
+      expect(l1 == l2).to eq(false)
+    end
+
+    it 'is equal' do
+      l3 = l1.to 'ft'
+      expect(l1==l3).to eq(true)
+    end
+
+    it 'is equal' do
+      l4 = l2.to 'mi'
+      expect(l4==l2).to eq(true)
+    end
+  end
 end

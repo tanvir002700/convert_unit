@@ -8,15 +8,24 @@ class Base
     @unit = unit.downcase
   end
 
+  def ==(ob)
+    a_to_b = one_unit_a_to_b(unit, ob.unit) * value
+    b_to_a = one_unit_a_to_b(ob.unit, unit) * ob.value
+    a_to_b == ob.value || b_to_a == value
+  end
+
   def inspect
     "#{@value}#{@unit}"
   end
 
   protected
 
-  def convert_to(c_unit)
-    conversion_rate = @conversion_rate_for_one_unit[unit][c_unit]
+  def one_unit_a_to_b(unit_a, unit_b)
+    conversion_rate = @conversion_rate_for_one_unit[unit_a][unit_b]
     conversion_rate = format('%<value>f', value: conversion_rate).to_f
-    conversion_rate * value
+  end
+
+  def convert_to(c_unit)
+    one_unit_a_to_b(unit, c_unit) * value
   end
 end
