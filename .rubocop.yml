@@ -3,7 +3,7 @@ AllCops:
     - 'bin/**/*'
     - 'spec/**/*'
     - 'vendor/**/*'
-    - 'model_2_factory-rails.gemspec'
+    - 'convert_unit.gemspec'
 
 Metrics/LineLength:
   Max: 120
@@ -17,7 +17,7 @@ Style/BlockComments:
 Style/Documentation:
   Enabled: false
 
-Style/ExtraSpacing:
+Layout/ExtraSpacing:
   AllowForAlignment: true
 
 Style/FrozenStringLiteralComment:
@@ -29,5 +29,5 @@ Style/NumericLiterals:
 Style/Next:
   Enabled: false
 
-Style/FileName:
+Naming/FileName:
   Enabled: false
