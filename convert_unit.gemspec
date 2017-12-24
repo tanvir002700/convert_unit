@@ -9,10 +9,11 @@ Gem::Specification.new do |spec|
   spec.authors       = ['tanvir hasan']
   spec.email         = ['tanvir002700@gmail.com']
 
-  spec.summary       = 'A simple unit conversion gem, with arithmetic calculation.'
-  spec.description   = 'Unit conversion.'
-  spec.homepage      = 'https://github.com/tanvir002700/convert_unit'
+  spec.summary       = 'A simple unit conversion gem.'
+  spec.description   = 'A Ruby Library for dealing with different types of unit conversion, with Arithmetic operation and comparisons.'
+  spec.homepage      = 'https://rubygems.org/gems/convert_unit'
   spec.license       = 'MIT'
+  spec.metadata    = { "source_code_uri" => "https://github.com/tanvir002700/convert_unit" }
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.
