@@ -16,7 +16,7 @@ class Base
 
   def convert_to(c_unit)
     conversion_rate = @conversion_rate_for_one_unit[unit][c_unit]
-    conversion_rate = ('%f' % conversion_rate).to_f
+    conversion_rate = format('%<value>f', value: conversion_rate).to_f
     conversion_rate * value
   end
 end

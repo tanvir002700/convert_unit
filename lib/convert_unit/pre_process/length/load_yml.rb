@@ -4,17 +4,17 @@ module ConvertUnit
     module Length
       def load_units_short_form
         f = File.open(File.join(File.dirname(__FILE__), 'units_short_form.yml'))
-        YAML.load(f)
+        YAML.safe_load(f)
       end
 
       def load_units
         f = File.open(File.join(File.dirname(__FILE__), 'units.yml'))
-        YAML.load(f)
+        YAML.safe_load(f)
       end
 
       def load_conversion_rate
         f = File.open(File.join(File.dirname(__FILE__), 'conversion_rate.yml'))
-        YAML.load(f)
+        YAML.safe_load(f)
       end
     end
   end
