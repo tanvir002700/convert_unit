@@ -27,17 +27,31 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+require 'convert_unit'
 
-## Development
+meter = ConvertUnit::Length.new(1, 'km')
+meter.to('km') #=> ConvertUnit::Length.new(1000, 'm')
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+# Comparisons
+ConvertUnit::Length.new(1, 'km') == ConvertUnit::Length.new(1000, 'm')  #=> true
+ConvertUnit::Length.new(1, 'km') == ConvertUnit::Length.new(1, 'm')     #=> false
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+ConvertUnit::Length.new(1, 'km') === ConvertUnit::Length.new(1, 'km')   #=> true
+ConvertUnit::Length.new(1, 'km') === ConvertUnit::Length.new(1000, 'm') #=> false
+
+# Arithmetic
+ConvertUnit::Length.new(1, 'km') + ConvertUnit::Length.new(1, 'km') == ConvertUnit::Length.new(2, 'km')
+ConvertUnit::Length.new(1, 'km') + ConvertUnit::Length.new(1000, 'm') == ConvertUnit::Length.new(2, 'km')
+ConvertUnit::Length.new(1000, 'm') + ConvertUnit::Length.new(1, 'km') == ConvertUnit::Length.new(2, 'm')
+
+```
 
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/tanvir002700/convert_unit. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+See the [Contribution Guidelines](https://github.com/tanvir002700/convert_unit/blob/master/CONTRIBUTING.md)
+
 
 ## License
 
