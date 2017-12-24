@@ -80,4 +80,32 @@ module ConvertUnit
       expect(l1 === l3).to eq(true)
     end
   end
+
+  describe 'check + method' do
+    let(:km) { Length.new 1093.613, 'km' }
+    let(:m) { Length.new 1000, 'm' }
+    it 'return 1094.613 km' do
+      expect((km + m).value).to eq(1094.613)
+      expect((km + m).unit).to eq('km')
+    end
+
+    it 'return 1094613.0 m' do
+      expect((m + km).value).to eq(1094613.0)
+      expect((m + km).unit).to eq('m')
+    end
+  end
+
+  describe 'check - method' do
+    let(:km) { Length.new 1093.613, 'km' }
+    let(:m) { Length.new 1000, 'm' }
+    it 'return 1092.613km' do
+      expect((km-m).value).to eq(1092.613)
+      expect((km-m).unit).to eq('km')
+    end
+
+    it 'return -1092613.0m' do
+      expect((m-km).value).to eq(-1092613.0)
+      expect((m-km).unit).to eq('m')
+    end
+  end
 end

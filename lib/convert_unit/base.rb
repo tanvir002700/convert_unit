@@ -15,9 +15,17 @@ class Base
   end
 
   def ===(ob)
-    puts "################################"
-    puts "#{value} #{ob.value} #{unit} #{ob.unit}"
     value == ob.value && unit == ob.unit
+  end
+
+  def +(ob)
+    b_to_a = ob.to(unit)
+    self.class.new(value+b_to_a.value, unit)
+  end
+
+  def -(ob)
+    b_to_a = ob.to(unit)
+    self.class.new(value-b_to_a.value, unit)
   end
 
   def inspect
