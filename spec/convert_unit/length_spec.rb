@@ -39,7 +39,7 @@ module ConvertUnit
 
   describe '.load_units' do
     it 'return list of valid units' do
-      expect(Length::load_units).to eq(['mm', 'cm', 'm', 'km', 'in', 'ft', 'yd', 'mi'])
+      expect(Length::load_available_units).to eq(['mm', 'cm', 'm', 'km', 'in', 'ft', 'yd', 'mi'])
     end
   end
 

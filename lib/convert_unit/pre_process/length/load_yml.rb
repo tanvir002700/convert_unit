@@ -7,7 +7,7 @@ module ConvertUnit
         YAML.safe_load(f)
       end
 
-      def load_units
+      def load_available_units
         f = File.open(File.join(File.dirname(__FILE__), 'units.yml'))
         YAML.safe_load(f)
       end

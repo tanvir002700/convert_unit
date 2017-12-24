@@ -6,7 +6,7 @@ module ConvertUnit
     extend PreProcess::Length
 
     UNITS_SHORT_FORM = load_units_short_form
-    UNITS = load_units
+    UNITS = load_available_units
     CONVERSION_RATE = load_conversion_rate
 
     attr_accessor :value, :unit
