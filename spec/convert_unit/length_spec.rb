@@ -61,4 +61,23 @@ module ConvertUnit
       expect(l4==l2).to eq(true)
     end
   end
+
+  describe 'check === method' do
+    let(:l1) { Length.new 1093.613, 'in' }
+    let(:l2) { Length.new 39370.08, 'yd' }
+    let(:l3) { Length.new 1093.613, 'in' }
+
+    it 'not equal' do
+      expect(l1 === l2).to eq(false)
+    end
+
+    it 'is not equal' do
+      l4 = l1.to 'yd'
+      expect(l3 === l4).to eq(false)
+    end
+
+    it 'is equal' do
+      expect(l1 === l3).to eq(true)
+    end
+  end
 end

@@ -14,6 +14,12 @@ class Base
     a_to_b == ob.value || b_to_a == value
   end
 
+  def ===(ob)
+    puts "################################"
+    puts "#{value} #{ob.value} #{unit} #{ob.unit}"
+    value == ob.value && unit == ob.unit
+  end
+
   def inspect
     "#{@value}#{@unit}"
   end
