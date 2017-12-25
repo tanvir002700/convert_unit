@@ -33,13 +33,14 @@ module ConvertUnit
 
   describe '.load_units_symbol' do
     it 'return ruby hash of length unit symbol form' do
-      expect(Area::load_units_symbol).to eq({"meter_square"=>"m2", "centimeter_square"=>"cm2", "inch_square"=>"in2", "foot_square"=>"ft2", "yard_square"=>"yd2"})
+      expect(Area::load_units_symbol).to eq({ 'meter_square'=>'m2', 'centimeter_square'=>'cm2', 'inch_square'=>'in2',
+                                              'foot_square'=>'ft2', 'yard_square'=>'yd2' })
     end
   end
 
   describe '.load_units' do
     it 'return list of valid units' do
-      expect(Area::load_available_units).to eq(["mm2", "cm2", "m2", "in2", "ft2", "yd2"])
+      expect(Area::UNITS).to eq(%w[mm2 cm2 m2 in2 ft2 yd2])
     end
   end
 
@@ -53,12 +54,12 @@ module ConvertUnit
 
     it 'is equal' do
       l3 = l1.to 'ft2'
-      expect(l1==l3).to eq(true)
+      expect(l1 == l3).to eq(true)
     end
 
     it 'is equal' do
       l4 = l2.to 'mm2'
-      expect(l4==l2).to eq(true)
+      expect(l4 == l2).to eq(true)
     end
   end
 
@@ -99,14 +100,13 @@ module ConvertUnit
     let(:m) { Area.new 1093.613, 'm2' }
     let(:cm) { Area.new 1000, 'cm2' }
     it 'return 1093.5130000000001m2' do
-      expect((m-cm).value).to eq(1093.5130000000001)
-      expect((m-cm).unit).to eq('m2')
+      expect((m - cm).value).to eq(1093.5130000000001)
+      expect((m - cm).unit).to eq('m2')
     end
 
     it 'return -10935130.0cm2' do
-      expect((cm-m).value).to eq(-10935130.0)
-      expect((cm-m).unit).to eq('cm2')
+      expect((cm - m).value).to eq(-10935130.0)
+      expect((cm - m).unit).to eq('cm2')
     end
   end
 end
-

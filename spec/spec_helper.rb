@@ -1,11 +1,11 @@
 $LOAD_PATH.unshift File.dirname(__FILE__)
 
-require "bundler/setup"
-require "convert_unit"
+require 'bundler/setup'
+require 'convert_unit'
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
-  config.example_status_persistence_file_path = ".rspec_status"
+  config.example_status_persistence_file_path = '.rspec_status'
 
   # Disable RSpec exposing methods globally on `Module` and `main`
 
@@ -15,5 +15,3 @@ RSpec.configure do |config|
     c.syntax = :expect
   end
 end
-
-

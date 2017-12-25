@@ -30,3 +30,6 @@ Style/Next:
 
 Naming/FileName:
   Enabled: false
+
+Style/CaseEquality:
+  Enabled: false
