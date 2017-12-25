@@ -4,7 +4,7 @@ require 'convert_unit/pre_process/length/process'
 module ConvertUnit
   class Length < Base
     extend PreProcess::Length
-    UNITS_SYMBOL = load_units_short_form
+    UNITS_SYMBOL = load_units_symbol
     UNITS = load_available_units
     CONVERSION_RATE = load_conversion_rate
 

@@ -31,9 +31,9 @@ module ConvertUnit
     end
   end
 
-  describe '.load_units_short_form' do
-    it 'return ruby hash of length unit short form' do
-      expect(Length::load_units_short_form).to eq({"millimeter"=>"mm", "centimeter"=>"cm", "meter"=>"m", "kilometer"=>"km", "inche"=>"in", "feet"=>"ft", "yard"=>"yd", "mile"=>"mi"})
+  describe '.load_units_symbol' do
+    it 'return ruby hash of length unit symbol' do
+      expect(Length::load_units_symbol).to eq({"millimeter"=>"mm", "centimeter"=>"cm", "meter"=>"m", "kilometer"=>"km", "inche"=>"in", "feet"=>"ft", "yard"=>"yd", "mile"=>"mi"})
     end
   end
 

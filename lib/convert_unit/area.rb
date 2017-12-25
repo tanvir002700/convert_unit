@@ -4,7 +4,7 @@ require 'convert_unit/pre_process/area/process'
 module ConvertUnit
   class Area < Base
     extend PreProcess::Area
-    UNITS_SYMBOL = load_units_short_form
+    UNITS_SYMBOL = load_units_symbol
     UNITS = load_available_units
     CONVERSION_RATE = load_conversion_rate
 

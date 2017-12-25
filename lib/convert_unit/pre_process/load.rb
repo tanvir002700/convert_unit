@@ -2,8 +2,8 @@ module ConvertUnit
   module PreProcess
     def file_path; end
 
-    def load_units_short_form
-      f = File.open(File.join(file_path, 'units_short_form.yml'))
+    def load_units_symbol
+      f = File.open(File.join(file_path, 'units_symbol.yml'))
       YAML.safe_load(f)
     end
 

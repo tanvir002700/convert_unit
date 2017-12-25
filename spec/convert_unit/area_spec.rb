@@ -31,9 +31,9 @@ module ConvertUnit
     end
   end
 
-  describe '.load_units_short_form' do
-    it 'return ruby hash of length unit short form' do
-      expect(Area::load_units_short_form).to eq({"meter_square"=>"m2", "centimeter_square"=>"cm2", "inch_square"=>"in2", "foot_square"=>"ft2", "yard_square"=>"yd2"})
+  describe '.load_units_symbol' do
+    it 'return ruby hash of length unit symbol form' do
+      expect(Area::load_units_symbol).to eq({"meter_square"=>"m2", "centimeter_square"=>"cm2", "inch_square"=>"in2", "foot_square"=>"ft2", "yard_square"=>"yd2"})
     end
   end
 
