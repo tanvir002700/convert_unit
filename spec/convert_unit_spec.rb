@@ -8,6 +8,6 @@ RSpec.describe ConvertUnit do
       ConvertUnit.constants.select { |k|
         ConvertUnit.const_get(k).instance_of? Class
       }
-    ).to eq([:Length])
+    ).to eq([:Length, :Area])
   end
 end
