@@ -60,7 +60,7 @@ Name       | Units
 :---------:|:------------------------------:
 Length     | mm, cm, m, km, in, ft, yd, mi
 Area       | mm2, cm2, m2, in2, ft2, yd2
-
+Mass       | g, kg, tonne, sh_ton, l_ton, lb, oz
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/tanvir002700/convert_unit. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
