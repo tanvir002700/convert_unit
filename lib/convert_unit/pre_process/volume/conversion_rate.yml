@@ -4,69 +4,69 @@ cm3:
   ltr: 0.001
   in3: 0.061024
   ft3: 0.000035
-  US_gal: 0.000264
-  Imp_gal: 0.00022
-  US_brl: 0.000006
+  us_gal: 0.000264
+  imp_gal: 0.00022
+  us_brl: 0.000006
 m3:
   cm3: 1000000
   m3: 1
   ltr: 1000
   in3: 61024
   ft3: 35
-  US_gal: 264
-  Imp_gal: 220
-  US_brl: 6.29
+  us_gal: 264
+  imp_gal: 220
+  us_brl: 6.29
 ltr:
   cm3: 1000
   m3: 0.001
   ltr: 1
   in3: 61
   ft3: 0.035
-  US_gal: 0.264201
-  Imp_gal: 0.22
-  US_brl: 0.00629
+  us_gal: 0.264201
+  imp_gal: 0.22
+  us_brl: 0.00629
 in3:
   cm3: 16.4
   m3: 0.000016
   ltr: 0.016387
   in3: 1
   ft3: 0.000579
-  US_gal: 0.004329
-  Imp_gal: 0.003605
-  US_brl: 0.000103
+  us_gal: 0.004329
+  imp_gal: 0.003605
+  us_brl: 0.000103
 ft3:
   cm3: 28317
   m3: 0.028317
   ltr: 28.31685
   in3: 1728
   ft3: 1
-  US_gal: 7.481333
-  Imp_gal: 6.229712
-  US_brl: 0.178127
-US_gal:
+  us_gal: 7.481333
+  imp_gal: 6.229712
+  us_brl: 0.178127
+us_gal:
   cm3: 3785
   m3: 0.003785
   ltr: 3.79
   in3: 231
   ft3: 0.13
-  US_gal: 1
-  Imp_gal: 0.832701
-  US_brl: 0.02381
-Imp_gal:
+  us_gal: 1
+  imp_gal: 0.832701
+  us_brl: 0.02381
+imp_gal:
   cm3: 4545
   m3: 0.004545
   ltr: 4.55
   in3: 277
   ft3: 0.16
-  US_gal: 1.20
-  Imp_gal: 1
-  US_brl: 0.028593
+  us_gal: 1.20
+  imp_gal: 1
+  us_brl: 0.028593
 cm3:
   cm3: 158970
   m3: 0.15897
   ltr: 159
   in3: 9701
   ft3: 6
-  US_gal: 42
-  Imp_gal: 35
-  US_brl: 1
+  us_gal: 42
+  imp_gal: 35
+  us_brl: 1
