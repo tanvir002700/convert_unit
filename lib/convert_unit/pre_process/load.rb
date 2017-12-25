@@ -1,6 +1,5 @@
 module ConvertUnit
   module PreProcess
-
     def file_path; end
 
     def load_units_short_form

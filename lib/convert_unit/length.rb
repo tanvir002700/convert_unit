@@ -1,10 +1,9 @@
 require 'convert_unit/base'
-require 'convert_unit/pre_process/length/load_yml'
+require 'convert_unit/pre_process/length/process'
 
 module ConvertUnit
   class Length < Base
     extend PreProcess::Length
-
     UNITS_SHORT_FORM = load_units_short_form
     UNITS = load_available_units
     CONVERSION_RATE = load_conversion_rate

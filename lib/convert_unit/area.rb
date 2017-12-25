@@ -1,10 +1,9 @@
 require 'convert_unit/base'
-require 'convert_unit/pre_process/area/load_yml'
+require 'convert_unit/pre_process/area/process'
 
 module ConvertUnit
   class Area < Base
     extend PreProcess::Area
-
     UNITS_SHORT_FORM = load_units_short_form
     UNITS = load_available_units
     CONVERSION_RATE = load_conversion_rate
