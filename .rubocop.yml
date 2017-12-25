@@ -1,7 +1,6 @@
 AllCops:
   Exclude:
     - 'bin/**/*'
-    - 'spec/**/*'
     - 'vendor/**/*'
     - 'convert_unit.gemspec'
 

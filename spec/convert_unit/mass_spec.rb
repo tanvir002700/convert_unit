@@ -33,7 +33,9 @@ module ConvertUnit
 
   describe '.load_units_symbol' do
     it 'return ruby hash of length unit symbol form' do
-      expect(Mass::load_units_symbol).to eq({"grams"=>"g", "kilograms"=>"kg", "metric_tonnes"=>"tonne", "short_ton"=>"sh_ton", "long_ton"=>"l_ton", "pounds"=>"lb", "ounces"=>"oz"})
+      expect(Mass::load_units_symbol).to eq({"grams"=>"g", "kilograms"=>"kg", "metric_tonnes"=>"tonne",
+                                             "short_ton"=>"sh_ton", "long_ton"=>"l_ton", "pounds"=>"lb",
+                                             "ounces"=>"oz"})
     end
   end
 
