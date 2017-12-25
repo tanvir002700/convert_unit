@@ -46,7 +46,7 @@ ConvertUnit::Length.new(1, 'km') + ConvertUnit::Length.new(1000, 'm') == Convert
 ConvertUnit::Length.new(1000, 'm') + ConvertUnit::Length.new(1, 'km') == ConvertUnit::Length.new(2, 'm')
 
 # Valid units argument list
-ConvertUnit::Length::UNITS_SHORT_FORM   #=> { "millimeter"=>"mm", "centimeter"=>"cm", "meter"=>"m",
+ConvertUnit::Length::UNITS_SYMBOL       #=> { "millimeter"=>"mm", "centimeter"=>"cm", "meter"=>"m",
                                         #     "kilometer"=>"km", "inche"=>"in", "feet"=>"ft", "yard"=>"yd", 
                                         #     "mile"=>"mi" }
                                         #
@@ -56,9 +56,10 @@ ConvertUnit::Length::UNITS_SHORT_FORM   #=> { "millimeter"=>"mm", "centimeter"=>
 
 ## Available options for conversion
 
-Name      | Units
+Name       | Units
 :---------:|:------------------------------:
-Length    | mm, cm, m, km, in, ft, yd, mi
+Length     | mm, cm, m, km, in, ft, yd, mi
+Area       | mm2, cm2, m2, in2, ft2, yd2
 
 ## Contributing
 
