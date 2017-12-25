@@ -33,7 +33,10 @@ module ConvertUnit
 
   describe '.load_units_symbol' do
     it 'return ruby hash of length unit symbol form' do
-      expect(Volume::load_units_symbol).to eq({"centimeter_cube"=>"cm3", "meter_cube"=>"m3", "liter"=>"ltr", "inch_cube"=>"in3", "foot_cube"=>"ft3", "uS_gallons"=>"us_gal", "imperial_gallons"=>"imp_gal", "uS_barrel"=>"us_bal"})
+      expect(Volume::load_units_symbol).to eq({"centimeter_cube"=>"cm3", "meter_cube"=>"m3",
+                                               "liter"=>"ltr", "inch_cube"=>"in3", "foot_cube"=>"ft3",
+                                               "uS_gallons"=>"us_gal", "imperial_gallons"=>"imp_gal",
+                                               "uS_barrel"=>"us_bal"})
     end
   end
 
