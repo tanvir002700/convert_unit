@@ -45,7 +45,8 @@ ConvertUnit::Length.new(1, 'km') === ConvertUnit::Length.new(1000, 'm') #=> fals
 # Arithmetic
 ConvertUnit::Length.new(1, 'km') + ConvertUnit::Length.new(1, 'km') == ConvertUnit::Length.new(2, 'km')
 ConvertUnit::Length.new(1, 'km') + ConvertUnit::Length.new(1000, 'm') == ConvertUnit::Length.new(2, 'km')
-ConvertUnit::Length.new(1000, 'm') + ConvertUnit::Length.new(1, 'km') == ConvertUnit::Length.new(2, 'm')
+ConvertUnit::Length.new(1000, 'm') + ConvertUnit::Length.new(1, 'km') == ConvertUnit::Length.new(2000, 'm')
+ConvertUnit::Length.new(1000, 'm') - ConvertUnit::Length.new(1, 'km') == ConvertUnit::Length.new(0, 'm')
 
 # Valid units argument list
 ConvertUnit::Length::UNITS_SYMBOL       #=> { "millimeter"=>"mm", "centimeter"=>"cm", "meter"=>"m",
