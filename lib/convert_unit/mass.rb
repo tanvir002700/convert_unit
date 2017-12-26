@@ -19,7 +19,7 @@ module ConvertUnit
     def to(c_unit)
       c_unit.downcase!
       unit_symbol = Mass::UNITS_SYMBOL[c_unit] || c_unit
-      raise ArgumentError, 'Unpossible conversion type' unless Mass::UNITS.include?(unit_symbol)
+      raise ArgumentError, 'Impossible conversion type' unless Mass::UNITS.include?(unit_symbol)
       Mass.new(convert_to(unit_symbol), unit_symbol)
     end
   end

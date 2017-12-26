@@ -19,7 +19,7 @@ module ConvertUnit
     def to(c_unit)
       c_unit.downcase!
       unit_symbol = Volume::UNITS_SYMBOL[c_unit] || c_unit
-      raise ArgumentError, 'Unpossible conversion type' unless Volume::UNITS.include?(unit_symbol)
+      raise ArgumentError, 'Impossible conversion type' unless Volume::UNITS.include?(unit_symbol)
       Volume.new(convert_to(unit_symbol), unit_symbol)
     end
   end

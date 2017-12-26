@@ -19,7 +19,7 @@ module ConvertUnit
     def to(c_unit)
       c_unit.downcase!
       unit_symbol = Length::UNITS_SYMBOL[c_unit] || c_unit
-      raise ArgumentError, 'Unpossible conversion type' unless Length::UNITS.include?(unit_symbol)
+      raise ArgumentError, 'Impossible conversion type' unless Length::UNITS.include?(unit_symbol)
       Length.new(convert_to(unit_symbol), unit_symbol)
     end
   end
