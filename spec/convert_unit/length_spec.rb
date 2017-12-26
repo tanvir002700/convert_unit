@@ -2,44 +2,46 @@ module ConvertUnit
   RSpec.describe Length, type: :class do
     context 'initiate object with wrong unit type argument' do
       it 'raise a TypeError' do
-        expect{Length.new(1,2)}.to raise_error(TypeError, 'Invalid Unit Type')
+        expect { Length.new(1, 2) }.to raise_error(TypeError, 'Invalid Unit Type')
       end
     end
 
     context 'initiate object with worng unit argument' do
       it 'raise a TypeError' do
-        expect{Length.new(1, 'degre')}.to raise_error(TypeError, 'Invalid Unit Type')
+        expect { Length.new(1, 'degre') }.to raise_error(TypeError, 'Invalid Unit Type')
       end
     end
 
     context 'initiate object with wrong value' do
       it 'raise a TypeError' do
-        expect{Length.new('abc', 'meter')}.to raise_error(TypeError)
+        expect { Length.new('abc', 'meter') }.to raise_error(TypeError)
       end
     end
 
     context 'initiate object with valid value' do
       it 'not raise any error' do
-        expect{Length.new(1, 'meter')}.to_not raise_error
+        expect { Length.new(1, 'meter') }.to_not raise_error
       end
     end
 
     context 'initiate object with short form of unit' do
       it 'not raise any error' do
-        expect{Length.new(1, 'km')}.to_not raise_error
+        expect { Length.new(1, 'km') }.to_not raise_error
       end
     end
   end
 
   describe '.load_units_symbol' do
     it 'return ruby hash of length unit symbol' do
-      expect(Length::load_units_symbol).to eq({'millimeter'=>'mm', 'centimeter'=>'cm', 'meter'=>'m', 'kilometer'=>'km', 'inche'=>'in', 'feet'=>'ft', 'yard'=>'yd', 'mile'=>'mi'})
+      expect(Length::UNITS_SYMBOL).to eq('millimeter' => 'mm', 'centimeter' => 'cm', 'meter' => 'm',
+                                         'kilometer' => 'km', 'inche' => 'in', 'feet' => 'ft',
+                                         'yard' => 'yd', 'mile' => 'mi')
     end
   end
 
   describe '.load_units' do
     it 'return list of valid units' do
-      expect(Length::load_available_units).to eq(['mm', 'cm', 'm', 'km', 'in', 'ft', 'yd', 'mi'])
+      expect(Length::UNITS).to eq(%w[mm cm m km in ft yd mi])
     end
   end
 
@@ -53,12 +55,12 @@ module ConvertUnit
 
     it 'is equal' do
       l3 = l1.to 'ft'
-      expect(l1==l3).to eq(true)
+      expect(l1 == l3).to eq(true)
     end
 
     it 'is equal' do
       l4 = l2.to 'mi'
-      expect(l4==l2).to eq(true)
+      expect(l4 == l2).to eq(true)
     end
   end
 
@@ -99,13 +101,13 @@ module ConvertUnit
     let(:km) { Length.new 1093.613, 'km' }
     let(:m) { Length.new 1000, 'm' }
     it 'return 1092.613km' do
-      expect((km-m).value).to eq(1092.613)
-      expect((km-m).unit).to eq('km')
+      expect((km - m).value).to eq(1092.613)
+      expect((km - m).unit).to eq('km')
     end
 
     it 'return -1092613.0m' do
-      expect((m-km).value).to eq(-1092613.0)
-      expect((m-km).unit).to eq('m')
+      expect((m - km).value).to eq(-1092613.0)
+      expect((m - km).unit).to eq('m')
     end
   end
 end
