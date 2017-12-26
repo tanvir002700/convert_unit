@@ -2,6 +2,8 @@
 [![Build Status](https://travis-ci.org/tanvir002700/convert_unit.svg?branch=master)](https://travis-ci.org/tanvir002700/convert_unit)
 [![Coverage Status](https://coveralls.io/repos/github/tanvir002700/convert_unit/badge.svg?branch=master)](https://coveralls.io/github/tanvir002700/convert_unit?branch=master)
 [![Maintainability](https://api.codeclimate.com/v1/badges/6e3e7ff7c7b040d1680d/maintainability)](https://codeclimate.com/github/tanvir002700/convert_unit/maintainability)
+[![Gem Version](https://badge.fury.io/rb/convert_unit.svg)](https://rubygems.org/gems/convert_unit) 
+[![Downloads](https://img.shields.io/gem/dt/convert_unit.svg)](https://rubygems.org/gems/convert_unit)
 [![GitHub last commit (branch)](https://img.shields.io/github/last-commit/tanvir002700/convert_unit/master.svg)](https://github.com/tanvir002700/convert_unit)
 [![license](https://img.shields.io/github/license/tanvir002700/convert_unit.svg)](https://github.com/tanvir002700/convert_unit/blob/master/LICENSE)
 
