@@ -2,39 +2,40 @@ module ConvertUnit
   RSpec.describe Area, type: :class do
     context 'initiate object with wrong unit type argument' do
       it 'raise a TypeError' do
-        expect{Area.new(1,2)}.to raise_error(TypeError, 'Invalid Unit Type')
+        expect { Area.new(1, 2) }.to raise_error(TypeError, 'Invalid Unit Type')
       end
     end
 
     context 'initiate object with worng unit argument' do
       it 'raise a TypeError' do
-        expect{Area.new(1, 'degre')}.to raise_error(TypeError, 'Invalid Unit Type')
+        expect { Area.new(1, 'degre') }.to raise_error(TypeError, 'Invalid Unit Type')
       end
     end
 
     context 'initiate object with wrong value' do
       it 'raise a TypeError' do
-        expect{Area.new('abc', 'cm2')}.to raise_error(TypeError)
+        expect { Area.new('abc', 'cm2') }.to raise_error(TypeError)
       end
     end
 
     context 'initiate object with valid value' do
       it 'not raise any error' do
-        expect{Area.new(1, 'cm2')}.to_not raise_error
+        expect { Area.new(1, 'cm2') }.to_not raise_error
       end
     end
 
     context 'initiate object with short form of unit' do
       it 'not raise any error' do
-        expect{Area.new(1, 'm2')}.to_not raise_error
+        expect { Area.new(1, 'm2') }.to_not raise_error
       end
     end
   end
 
   describe '.load_units_symbol' do
     it 'return ruby hash of length unit symbol form' do
-      expect(Area::load_units_symbol).to eq({ 'meter_square'=>'m2', 'centimeter_square'=>'cm2', 'inch_square'=>'in2',
-                                              'foot_square'=>'ft2', 'yard_square'=>'yd2' })
+      expect(Area::UNITS_SYMBOL).to eq('meter_square' => 'm2', 'centimeter_square' => 'cm2',
+                                       'inch_square' => 'in2', 'foot_square' => 'ft2',
+                                       'yard_square' => 'yd2')
     end
   end
 
