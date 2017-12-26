@@ -2,46 +2,46 @@ module ConvertUnit
   RSpec.describe Mass, type: :class do
     context 'initiate object with wrong unit type argument' do
       it 'raise a TypeError' do
-        expect{Mass.new(1,2)}.to raise_error(TypeError, 'Invalid Unit Type')
+        expect { Mass.new(1, 2) }.to raise_error(TypeError, 'Invalid Unit Type')
       end
     end
 
     context 'initiate object with worng unit argument' do
       it 'raise a TypeError' do
-        expect{Mass.new(1, 'degre')}.to raise_error(TypeError, 'Invalid Unit Type')
+        expect { Mass.new(1, 'degre') }.to raise_error(TypeError, 'Invalid Unit Type')
       end
     end
 
     context 'initiate object with wrong value' do
       it 'raise a TypeError' do
-        expect{Mass.new('abc', 'cm2')}.to raise_error(TypeError)
+        expect { Mass.new('abc', 'cm2') }.to raise_error(TypeError)
       end
     end
 
     context 'initiate object with valid value' do
       it 'not raise any error' do
-        expect{Mass.new(1, 'kg')}.to_not raise_error
+        expect { Mass.new(1, 'kg') }.to_not raise_error
       end
     end
 
     context 'initiate object with symbol of unit' do
       it 'not raise any error' do
-        expect{Mass.new(1, 'tonne')}.to_not raise_error
+        expect { Mass.new(1, 'tonne') }.to_not raise_error
       end
     end
   end
 
   describe '.load_units_symbol' do
     it 'return ruby hash of length unit symbol form' do
-      expect(Mass::load_units_symbol).to eq({'grams'=>'g', 'kilograms'=>'kg', 'metric_tonnes'=>'tonne',
-                                             'short_ton'=>'sh_ton', 'long_ton'=>'l_ton', 'pounds'=>'lb',
-                                             'ounces'=>'oz'})
+      expect(Mass::UNITS_SYMBOL).to eq('grams' => 'g', 'kilograms' => 'kg', 'metric_tonnes' => 'tonne',
+                                       'short_ton' => 'sh_ton', 'long_ton' => 'l_ton', 'pounds' => 'lb',
+                                       'ounces' => 'oz')
     end
   end
 
   describe '.load_units' do
     it 'return list of valid units' do
-      expect(Mass::load_available_units).to eq(['g', 'kg', 'tonne', 'sh_ton', 'l_ton', 'lb', 'oz'])
+      expect(Mass::UNITS).to eq(%w[g kg tonne sh_ton l_ton lb oz])
     end
   end
 
@@ -55,12 +55,12 @@ module ConvertUnit
 
     it 'is equal' do
       l3 = l1.to 'g'
-      expect(l1==l3).to eq(true)
+      expect(l1 == l3).to eq(true)
     end
 
     it 'is equal' do
       l4 = l2.to 'tonne'
-      expect(l4==l2).to eq(true)
+      expect(l4 == l2).to eq(true)
     end
   end
 
@@ -111,4 +111,3 @@ module ConvertUnit
     end
   end
 end
-
