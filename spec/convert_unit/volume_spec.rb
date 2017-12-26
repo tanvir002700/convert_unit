@@ -2,47 +2,47 @@ module ConvertUnit
   RSpec.describe Volume, type: :class do
     context 'initiate object with wrong unit type argument' do
       it 'raise a TypeError' do
-        expect{Volume.new(1,2)}.to raise_error(TypeError, 'Invalid Unit Type')
+        expect { Volume.new(1, 2) }.to raise_error(TypeError, 'Invalid Unit Type')
       end
     end
 
     context 'initiate object with worng unit argument' do
       it 'raise a TypeError' do
-        expect{Volume.new(1, 'degre')}.to raise_error(TypeError, 'Invalid Unit Type')
+        expect { Volume.new(1, 'degre') }.to raise_error(TypeError, 'Invalid Unit Type')
       end
     end
 
     context 'initiate object with wrong value' do
       it 'raise a TypeError' do
-        expect{Volume.new('abc', 'cm2')}.to raise_error(TypeError)
+        expect { Volume.new('abc', 'cm2') }.to raise_error(TypeError)
       end
     end
 
     context 'initiate object with valid value' do
       it 'not raise any error' do
-        expect{Volume.new(1, 'ltr')}.to_not raise_error
+        expect { Volume.new(1, 'ltr') }.to_not raise_error
       end
     end
 
     context 'initiate object with symbol of unit' do
       it 'not raise any error' do
-        expect{Volume.new(1, 'meter_cube')}.to_not raise_error
+        expect { Volume.new(1, 'meter_cube') }.to_not raise_error
       end
     end
   end
 
   describe '.load_units_symbol' do
     it 'return ruby hash of length unit symbol form' do
-      expect(Volume::load_units_symbol).to eq({'centimeter_cube'=>'cm3', 'meter_cube'=>'m3',
-                                               'liter'=>'ltr', 'inch_cube'=>'in3', 'foot_cube'=>'ft3',
-                                               'uS_gallons'=>'us_gal', 'imperial_gallons'=>'imp_gal',
-                                               'uS_barrel'=>'us_bal'})
+      expect(Volume::UNITS_SYMBOL).to eq('centimeter_cube' => 'cm3', 'meter_cube' => 'm3',
+                                         'liter' => 'ltr', 'inch_cube' => 'in3', 'foot_cube' => 'ft3',
+                                         'uS_gallons' => 'us_gal', 'imperial_gallons' => 'imp_gal',
+                                         'uS_barrel' => 'us_bal')
     end
   end
 
   describe '.load_units' do
     it 'return list of valid units' do
-      expect(Volume::load_available_units).to eq(['cm3', 'm3', 'ltr', 'in3', 'ft3', 'us_gal', 'imp_gal', 'us_brl'])
+      expect(Volume::UNITS).to eq(%w[cm3 m3 ltr in3 ft3 us_gal imp_gal us_brl])
     end
   end
 
@@ -56,12 +56,12 @@ module ConvertUnit
 
     it 'is equal' do
       l3 = l1.to 'ft3'
-      expect(l1==l3).to eq(true)
+      expect(l1 == l3).to eq(true)
     end
 
     it 'is equal' do
       l4 = l2.to 'us_gal'
-      expect(l4==l2).to eq(true)
+      expect(l4 == l2).to eq(true)
     end
   end
 
@@ -112,4 +112,3 @@ module ConvertUnit
     end
   end
 end
-
