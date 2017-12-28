@@ -33,10 +33,10 @@ module ConvertUnit
 
   describe '.load_units_symbol' do
     it 'return ruby hash of length unit symbol form' do
-      expect(VolumetricLiquidFlow::UNITS_SYMBOL).to eq("liter/second" => "l/sec", "liter/minute" => "l/min",
-                                                       "meter_cube/hour" => "m3", "foot_cube/minute" => "ft3/min",
-                                                       "foot_cube/hour" => "ft3/hr", "us_gallons/minute" => "gal/min",
-                                                       "us_barrels/day"=>"brl/d")
+      expect(VolumetricLiquidFlow::UNITS_SYMBOL).to eq('liter/second' => 'l/sec', 'liter/minute' => 'l/min',
+                                                       'meter_cube/hour' => 'm3', 'foot_cube/minute' => 'ft3/min',
+                                                       'foot_cube/hour' => 'ft3/hr', 'us_gallons/minute' => 'gal/min',
+                                                       'us_barrels/day' => 'brl/d')
     end
   end
 

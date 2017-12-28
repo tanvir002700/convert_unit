@@ -33,8 +33,8 @@ module ConvertUnit
 
   describe '.load_units_symbol' do
     it 'return ruby hash of length unit symbol form' do
-      expect(Density::UNITS_SYMBOL).to eq("gram/milliliter" => "g/ml", "kilogram/meter_cube" => "kg/m3",
-                                          "pound/foot_cube"=>"lb/ft3", "pound/inch_cube"=>"lb/in3")
+      expect(Density::UNITS_SYMBOL).to eq('gram/milliliter' => 'g/ml', 'kilogram/meter_cube' => 'kg/m3',
+                                          'pound/foot_cube' => 'lb/ft3', 'pound/inch_cube' => 'lb/in3')
     end
   end
 
