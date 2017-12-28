@@ -1,5 +1,7 @@
-require 'convert_unit/length'
-require 'convert_unit/area'
-require 'convert_unit/mass'
-require 'convert_unit/volume'
-require 'convert_unit/density'
+module ConvertUnit
+  def self.all_classes
+    self.constants.select do |k|
+      self.const_get(k).instance_of? Class
+    end
+  end
+end
