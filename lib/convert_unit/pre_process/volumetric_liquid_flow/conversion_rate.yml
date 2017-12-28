@@ -1,0 +1,56 @@
+l/sec:
+  l/sec: 1
+  l/min: 60
+  m3: 3.6
+  ft3/min: 2.119093
+  ft3/hr: 127.1197
+  gal/min: 15.85037
+  brl/d: 543.4783
+l/min:
+  l/sec: 0.016666
+  l/min: 1
+  m3: 0.06
+  ft3/min: 0.035317
+  ft3/hr: 2.118577
+  gal/min: 0.264162
+  brl/d: 9.057609
+m3:
+  l/sec: 0.277778
+  l/min: 16.6667
+  m3: 1
+  ft3/min: 0.588637
+  ft3/hr: 35.31102
+  gal/min: 4.40288
+  brl/d: 150.9661
+ft3/min:
+  l/sec: 0.4719
+  l/min: 28.31513
+  m3: 1.69884
+  ft3/min: 1
+  ft3/hr: 60
+  gal/min: 7.479791
+  brl/d: 256.4674
+ft3/hr:
+  l/sec: 0.007867
+  l/min: 0.472015
+  m3: 0.02832
+  ft3/min: 0.01667
+  ft3/hr: 1
+  gal/min: 0.124689
+  brl/d: 4.275326
+gal/min:
+  l/sec: 0.06309
+  l/min: 3.785551
+  m3: 0.227124
+  ft3/min: 0.133694
+  ft3/hr: 8.019983
+  gal/min: 1
+  brl/d: 34.28804
+brl/d:
+  l/sec: 0.00184
+  l/min: 0.110404
+  m3: 0.006624
+  ft3/min: 0.003899
+  ft3/hr: 0.2339
+  gal/min: 0.029165
+  brl/d: 1

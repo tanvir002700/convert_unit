@@ -4,6 +4,6 @@ RSpec.describe ConvertUnit do
   end
 
   it 'does something useful' do
-    expect(ConvertUnit.all_classes).to eq(%I[Length Area Mass Volume Density])
+    expect(ConvertUnit.all_classes).to eq(%I[Length Area Mass Volume Density VolumetricLiquidFlow])
   end
 end
