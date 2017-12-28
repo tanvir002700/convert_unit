@@ -4,10 +4,6 @@ RSpec.describe ConvertUnit do
   end
 
   it 'does something useful' do
-    expect(
-      ConvertUnit.constants.select do |k|
-        ConvertUnit.const_get(k).instance_of? Class
-      end
-    ).to eq(%I[Length Area Mass Volume])
+    expect(ConvertUnit.all_classes).to eq(%I[Length Area Mass Volume Density])
   end
 end
