@@ -1,6 +1,6 @@
-liter/second: L/sec
-liter/minute: L/min
-meter_cube/hour:  M3
+liter/second: l/sec
+liter/minute: l/min
+meter_cube/hour: m3
 foot_cube/minute: ft3/min
 foot_cube/hour: ft3/hr
 us_gallons/minute: gal/min
