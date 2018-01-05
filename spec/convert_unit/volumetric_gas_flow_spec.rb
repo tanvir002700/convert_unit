@@ -14,67 +14,67 @@ module ConvertUnit
 
     context 'initiate object with wrong value' do
       it 'raise a TypeError' do
-        expect { VolumetricGasFlow.new('abc', 'cm2') }.to raise_error(TypeError)
+        expect { VolumetricGasFlow.new('abc', 'scfm') }.to raise_error(TypeError)
       end
     end
 
     context 'initiate object with valid value' do
       it 'not raise any error' do
-        expect { VolumetricGasFlow.new(1, 'cm2') }.to_not raise_error
+        expect { VolumetricGasFlow.new(1, 'nm3/hr') }.to_not raise_error
       end
     end
 
     context 'initiate object with short form of unit' do
       it 'not raise any error' do
-        expect { VolumetricGasFlow.new(1, 'm2') }.to_not raise_error
+        expect { VolumetricGasFlow.new(1, 'scfm') }.to_not raise_error
       end
     end
   end
 
   describe '.load_units_symbol' do
     it 'return ruby hash of length unit symbol form' do
-      expect(VolumetricGasFlow::UNITS_SYMBOL).to eq('meter_square' => 'm2', 'centimeter_square' => 'cm2',
-                                       'inch_square' => 'in2', 'foot_square' => 'ft2',
-                                       'yard_square' => 'yd2')
+      expect(VolumetricGasFlow::UNITS_SYMBOL).to eq("normal_meter_cube/hour" => "nm3/hr",
+                                                    "standard_cubic_feet/hour" => "scfh",
+                                                    "standard_cubic_feet/minute" => "scfm")
     end
   end
 
   describe '.load_units' do
     it 'return list of valid units' do
-      expect(VolumetricGasFlow::UNITS).to eq(%w[mm2 cm2 m2 in2 ft2 yd2])
+      expect(VolumetricGasFlow::UNITS).to eq(%w[nm3/hr scfh scfm])
     end
   end
 
   describe 'check equal method' do
-    let(:l1) { VolumetricGasFlow.new 3.1415678, 'mm2' }
-    let(:l2) { VolumetricGasFlow.new 3.1415678, 'ft2' }
+    let(:l1) { VolumetricGasFlow.new 3.1415678, 'scfm' }
+    let(:l2) { VolumetricGasFlow.new 3.1415678, 'scfh' }
 
     it 'not equal' do
       expect(l1 == l2).to eq(false)
     end
 
     it 'is equal' do
-      l3 = l1.to 'ft2'
+      l3 = l1.to 'scfh'
       expect(l1 == l3).to eq(true)
     end
 
     it 'is equal' do
-      l4 = l2.to 'mm2'
+      l4 = l2.to 'scfm'
       expect(l4 == l2).to eq(true)
     end
   end
 
   describe 'check === method' do
-    let(:l1) { VolumetricGasFlow.new 1093.613, 'in2' }
-    let(:l2) { VolumetricGasFlow.new 39370.08, 'ft2' }
-    let(:l3) { VolumetricGasFlow.new 1093.613, 'in2' }
+    let(:l1) { VolumetricGasFlow.new 1093.613, 'scfm' }
+    let(:l2) { VolumetricGasFlow.new 39370.08, 'scfh' }
+    let(:l3) { VolumetricGasFlow.new 1093.613, 'scfm' }
 
     it 'not equal' do
       expect(l1 === l2).to eq(false)
     end
 
     it 'is not equal' do
-      l4 = l1.to 'mm2'
+      l4 = l1.to 'scfh'
       expect(l3 === l4).to eq(false)
     end
 
@@ -84,30 +84,30 @@ module ConvertUnit
   end
 
   describe 'check + method' do
-    let(:m) { VolumetricGasFlow.new 1093.613, 'm2' }
-    let(:cm) { VolumetricGasFlow.new 1000, 'cm2' }
-    it 'return 1093.713 m2' do
-      expect((m + cm).value).to eq(1093.713)
-      expect((m + cm).unit).to eq('m2')
+    let(:v1) { VolumetricGasFlow.new 1093.613, 'scfm' }
+    let(:v2) { VolumetricGasFlow.new 1000, 'scfh' }
+    it 'return 1110.2820000000002 scfm' do
+      expect((v1 + v2).value).to eq(1110.2820000000002)
+      expect((v1 + v2).unit).to eq('scfm')
     end
 
-    it 'return 10937130.0 m2' do
-      expect((cm + m).value).to eq(10937130.0)
-      expect((cm + m).unit).to eq('cm2')
+    it 'return 66609.05909222 scfh' do
+      expect((v2 + v1).value).to eq(66609.05909222)
+      expect((v2 + v1).unit).to eq('scfh')
     end
   end
 
   describe 'check - method' do
-    let(:m) { VolumetricGasFlow.new 1093.613, 'm2' }
-    let(:cm) { VolumetricGasFlow.new 1000, 'cm2' }
-    it 'return 1093.5130000000001m2' do
-      expect((m - cm).value).to eq(1093.5130000000001)
-      expect((m - cm).unit).to eq('m2')
+    let(:v1) { VolumetricGasFlow.new 1093.613, 'scfm' }
+    let(:v2) { VolumetricGasFlow.new 1000, 'scfh' }
+    it 'return 1076.944 scfm' do
+      expect((v1 - v2).value).to eq(1076.944)
+      expect((v1 - v2).unit).to eq('scfm')
     end
 
-    it 'return -10935130.0cm2' do
-      expect((cm - m).value).to eq(-10935130.0)
-      expect((cm - m).unit).to eq('cm2')
+    it 'return -64609.059092220006 scfh' do
+      expect((v2 - v1).value).to eq(-64609.059092220006)
+      expect((v2 - v1).unit).to eq('scfh')
     end
   end
 end
