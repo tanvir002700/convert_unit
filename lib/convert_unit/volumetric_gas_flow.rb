@@ -1,5 +1,5 @@
 require 'convert_unit/base'
-require 'convert_unit/pre_process/area/process'
+require 'convert_unit/pre_process/volumetric_gas_flow/process'
 
 module ConvertUnit
   class VolumetricGasFlow < Base

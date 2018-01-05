@@ -10,13 +10,3 @@ scfm:
   nm3/hr: 1.699
   scfh: 59.99294
   scfm: 1
-
-normal_meter_cube/hour
-standard_cubic_feet/hour
-standard_cubic_feet/minute
-nm3/hr
-scfh
-scfm
-1 35.31073 0.588582
-0.02832 1 0.016669
-1.699 59.99294 1
