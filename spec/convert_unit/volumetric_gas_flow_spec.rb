@@ -33,9 +33,9 @@ module ConvertUnit
 
   describe '.load_units_symbol' do
     it 'return ruby hash of length unit symbol form' do
-      expect(VolumetricGasFlow::UNITS_SYMBOL).to eq("normal_meter_cube/hour" => "nm3/hr",
-                                                    "standard_cubic_feet/hour" => "scfh",
-                                                    "standard_cubic_feet/minute" => "scfm")
+      expect(VolumetricGasFlow::UNITS_SYMBOL).to eq('normal_meter_cube/hour' => 'nm3/hr',
+                                                    'standard_cubic_feet/hour' => 'scfh',
+                                                    'standard_cubic_feet/minute' => 'scfm')
     end
   end
 
