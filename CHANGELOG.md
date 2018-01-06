@@ -3,6 +3,7 @@
 * Add module self method for get available unit conversion class
 * Add Density method conversion
 * Add Volumetric liquid flow
+* Add Volumetric gas flow
 
 ## v0.1.0
 * initial release
