@@ -33,7 +33,10 @@ module ConvertUnit
 
   describe '.load_units_symbol' do
     it 'return ruby hash of length unit symbol form' do
-      expect(MassFlow::UNITS_SYMBOL).to eq('kilogram/hour' => 'kg/h', 'pound/hour' => 'lb/h', 'kilogram/second' => 'kg/s', 'ton/hour' => 't/h')
+      expect(MassFlow::UNITS_SYMBOL).to eq('kilogram/hour' => 'kg/h',
+                                           'pound/hour' => 'lb/h',
+                                           'kilogram/second' => 'kg/s',
+                                           'ton/hour' => 't/h')
     end
   end
 
