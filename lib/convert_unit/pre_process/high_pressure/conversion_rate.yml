@@ -1,0 +1,56 @@
+bar:
+  bar: 1
+  psi: 14.50326
+  kpa: 100
+  mpa: 0.1
+  kgf/cm2: 1.01968
+  mm_hg: 750.0188
+  atm: 0.987167
+psi:
+  bar: 0.06895
+  psi: 1
+  kpa: 6.895
+  mpa: 0.006895
+  kgf/cm2: 0.070307
+  mm_hg: 51.71379
+  atm: 0.068065
+kpa:
+  bar: 0.01
+  psi: 0.1450
+  kpa: 1
+  mpa: 0.001
+  kgf/cm2: 0.01020
+  mm_hg: 7.5002
+  atm: 0.00987
+mpa:
+  bar: 10
+  psi: 145.03
+  kpa: 1000
+  mpa: 1
+  kgf/cm2: 10.197
+  mm_hg: 7500.2
+  atm: 9.8717
+kgf/cm2:
+  bar: 0.9807
+  psi: 14.22335
+  kpa: 98.07
+  mpa: 0.09807
+  kgf/cm2: 1
+  mm_hg: 735.5434
+  atm: 0.968115
+mm_hg:
+  bar: 0.001333
+  psi: 0.019337
+  kpa: 0.13333
+  mpa: 0.000133
+  kgf/cm2: 0.00136
+  mm_hg: 1
+  atm: 0.001316
+atm:
+  bar: 1.013
+  psi: 14.69181
+  kpa: 101.3
+  mpa: 0.1013
+  kgf/cm2: 1.032936
+  mm_hg: 759.769
+  atm: 1
