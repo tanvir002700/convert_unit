@@ -1,0 +1,42 @@
+mh2o:
+  mh2o: 1
+  fth2o: 3.280696
+  cmhg: 7.356339
+  inhg: 2.896043
+  inh2o: 39.36572
+  pa: 9806
+fth2o:
+  mh2o: 0.304813
+  fth2o: 1
+  cmhg: 2.242311
+  inhg: 0.882753
+  inh2o: 11.9992
+  pa: 2989
+cmhg:
+  mh2o: 0.135937
+  fth2o: 0.445969
+  cmhg: 1
+  inhg: 0.39368
+  inh2o: 5.351265
+  pa: 1333
+inhg:
+  mh2o: 0.345299
+  fth2o: 1.13282
+  cmhg: 2.540135
+  inhg: 1
+  inh2o: 13.59293
+  pa: 3386
+inh2o:
+  mh2o: 0.025403
+  fth2o: 0.083339
+  cmhg: 0.186872
+  inhg: 0.073568
+  inh2o: 1
+  pa: 249.1
+pa:
+  mh2o: 0.000102
+  fth2o: 0.000335
+  cmhg: 0.00075
+  inhg: 0.000295
+  inh2o: 0.004014
+  pa: 1
