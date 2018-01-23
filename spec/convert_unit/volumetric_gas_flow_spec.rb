@@ -86,13 +86,13 @@ module ConvertUnit
   describe 'check + method' do
     let(:v1) { VolumetricGasFlow.new 1093.613, 'scfm' }
     let(:v2) { VolumetricGasFlow.new 1000, 'scfh' }
-    it 'return 1110.2820000000002 scfm' do
-      expect((v1 + v2).value).to eq(1110.2820000000002)
+    it 'return 1110.2820000000000 scfm' do
+      expect((v1 + v2).value).to eq(1110.2820000000000)
       expect((v1 + v2).unit).to eq('scfm')
     end
 
     it 'return 66609.05909222 scfh' do
-      expect((v2 + v1).value).to eq(66609.05909222)
+      expect((v2 + v1).value.to_f).to eq(66609.05909222)
       expect((v2 + v1).unit).to eq('scfh')
     end
   end
@@ -105,8 +105,8 @@ module ConvertUnit
       expect((v1 - v2).unit).to eq('scfm')
     end
 
-    it 'return -64609.059092220006 scfh' do
-      expect((v2 - v1).value).to eq(-64609.059092220006)
+    it 'return -64609.059092220000 scfh' do
+      expect((v2 - v1).value).to eq(-64609.059092220000)
       expect((v2 - v1).unit).to eq('scfh')
     end
   end
