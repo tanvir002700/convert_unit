@@ -5,7 +5,7 @@ class Base
   def initialize(value, unit, valid_units)
     raise TypeError, 'no implicit conversion of String into Integer' unless value.is_a? Numeric
     raise TypeError, 'Invalid Unit Type' unless valid_units.include?(unit.to_s.downcase)
-    @value = BigDecimal.new value
+    @value = BigDecimal.new value, 10
     @unit = unit.downcase
   end
 
