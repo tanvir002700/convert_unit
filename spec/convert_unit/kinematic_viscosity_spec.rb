@@ -33,7 +33,8 @@ module ConvertUnit
 
   describe '.load_units_symbol' do
     it 'return ruby hash of length unit symbol form' do
-      expect(KinematicViscosity::UNITS_SYMBOL).to eq('centistoke'=>'cs', 'stoke'=>'st', 'foot_square/second'=>'ft2/s', 'meter_square/second'=>'m2/s')
+      expect(KinematicViscosity::UNITS_SYMBOL).to eq('centistoke' => 'cs', 'stoke' => 'st',
+                                                     'foot_square/second' => 'ft2/s', 'meter_square/second' => 'm2/s')
     end
   end
 
