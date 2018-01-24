@@ -8,6 +8,7 @@ RSpec.describe ConvertUnit do
                                              Density VolumetricLiquidFlow
                                              VolumetricGasFlow MassFlow
                                              HighPressure
-                                             LowPressure])
+                                             LowPressure
+                                             KinematicViscosity])
   end
 end

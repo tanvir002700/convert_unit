@@ -100,8 +100,8 @@ module ConvertUnit
   describe 'check - method' do
     let(:m) { Area.new 1093.613, 'm2' }
     let(:cm) { Area.new 1000, 'cm2' }
-    it 'return 1093.5130000000001m2' do
-      expect((m - cm).value).to eq(1093.5130000000001)
+    it 'return 1093.5130000000001 m2' do
+      expect((m - cm).value).to eq(1093.5130000000000)
       expect((m - cm).unit).to eq('m2')
     end
 
