@@ -72,6 +72,7 @@ Mass Flow              | kg/h lb/h kg/s t/h
 High Pressure          | bar psi kpa mpa kgf/cm2 mm_hg atm
 Low Pressure           | mh2o fth2o cmhg inhg inh2o pa
 KinematicViscosity     | cs st ft2/s m2/s
+Speed                  | m/s m/min km/h ft/s ft/min mi/h
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/tanvir002700/convert_unit. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
