@@ -9,6 +9,7 @@ RSpec.describe ConvertUnit do
                                              VolumetricGasFlow MassFlow
                                              HighPressure
                                              LowPressure
-                                             KinematicViscosity])
+                                             KinematicViscosity
+                                             Speed])
   end
 end
