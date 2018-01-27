@@ -33,7 +33,8 @@ module ConvertUnit
 
   describe '.load_units_symbol' do
     it 'return ruby hash of length unit symbol form' do
-      expect(DynamicViscosity::UNITS_SYMBOL).to eq("centipoise"=>"cp", "poise"=>"poise", "pound/foot.second"=>"lb/ft·s")
+      expect(DynamicViscosity::UNITS_SYMBOL).to eq('centipoise' => 'cp', 'poise' => 'poise',
+                                                   'pound/foot.second' => 'lb/ft·s')
     end
   end
 
