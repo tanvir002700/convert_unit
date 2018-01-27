@@ -20,61 +20,59 @@ module ConvertUnit
 
     context 'initiate object with valid value' do
       it 'not raise any error' do
-        expect { DynamicViscosity.new(1, 'cm2') }.to_not raise_error
+        expect { DynamicViscosity.new(1, 'poise') }.to_not raise_error
       end
     end
 
     context 'initiate object with short form of unit' do
       it 'not raise any error' do
-        expect { DynamicViscosity.new(1, 'm2') }.to_not raise_error
+        expect { DynamicViscosity.new(1, 'cp') }.to_not raise_error
       end
     end
   end
 
   describe '.load_units_symbol' do
     it 'return ruby hash of length unit symbol form' do
-      expect(DynamicViscosity::UNITS_SYMBOL).to eq('meter_square' => 'm2', 'centimeter_square' => 'cm2',
-                                       'inch_square' => 'in2', 'foot_square' => 'ft2',
-                                       'yard_square' => 'yd2')
+      expect(DynamicViscosity::UNITS_SYMBOL).to eq("centipoise"=>"cp", "poise"=>"poise", "pound/foot.second"=>"lb/ft·s")
     end
   end
 
   describe '.load_units' do
     it 'return list of valid units' do
-      expect(DynamicViscosity::UNITS).to eq(%w[mm2 cm2 m2 in2 ft2 yd2])
+      expect(DynamicViscosity::UNITS).to eq(%w[cp poise lb/ft·s])
     end
   end
 
   describe 'check equal method' do
-    let(:l1) { DynamicViscosity.new 3.1415678, 'mm2' }
-    let(:l2) { DynamicViscosity.new 3.1415678, 'ft2' }
+    let(:l1) { DynamicViscosity.new 3.1415678, 'cp' }
+    let(:l2) { DynamicViscosity.new 3.1415678, 'poise' }
 
     it 'not equal' do
       expect(l1 == l2).to eq(false)
     end
 
     it 'is equal' do
-      l3 = l1.to 'ft2'
+      l3 = l1.to 'lb/ft·s'
       expect(l1 == l3).to eq(true)
     end
 
     it 'is equal' do
-      l4 = l2.to 'mm2'
+      l4 = l2.to 'cp'
       expect(l4 == l2).to eq(true)
     end
   end
 
   describe 'check === method' do
-    let(:l1) { DynamicViscosity.new 1093.613, 'in2' }
-    let(:l2) { DynamicViscosity.new 39370.08, 'ft2' }
-    let(:l3) { DynamicViscosity.new 1093.613, 'in2' }
+    let(:l1) { DynamicViscosity.new 1093.613, 'cp' }
+    let(:l2) { DynamicViscosity.new 39370.08, 'poise' }
+    let(:l3) { DynamicViscosity.new 1093.613, 'cp' }
 
     it 'not equal' do
       expect(l1 === l2).to eq(false)
     end
 
     it 'is not equal' do
-      l4 = l1.to 'mm2'
+      l4 = l1.to 'poise'
       expect(l3 === l4).to eq(false)
     end
 
@@ -84,30 +82,30 @@ module ConvertUnit
   end
 
   describe 'check + method' do
-    let(:m) { DynamicViscosity.new 1093.613, 'm2' }
-    let(:cm) { DynamicViscosity.new 1000, 'cm2' }
-    it 'return 1093.713 m2' do
-      expect((m + cm).value).to eq(1093.713)
-      expect((m + cm).unit).to eq('m2')
+    let(:cp) { DynamicViscosity.new 1093.613, 'cp' }
+    let(:poise) { DynamicViscosity.new 1000, 'poise' }
+    it 'return 0.101093613e6 cp' do
+      expect((cp + poise).value).to eq(0.101093613e6)
+      expect((cp + poise).unit).to eq('cp')
     end
 
-    it 'return 10937130.0 m2' do
-      expect((cm + m).value).to eq(10937130.0)
-      expect((cm + m).unit).to eq('cm2')
+    it 'return 0.101093613e4 poise' do
+      expect((poise + cp).value).to eq(0.101093613e4)
+      expect((poise + cp).unit).to eq('poise')
     end
   end
 
   describe 'check - method' do
-    let(:m) { DynamicViscosity.new 1093.613, 'm2' }
-    let(:cm) { DynamicViscosity.new 1000, 'cm2' }
-    it 'return 1093.5130000000001 m2' do
-      expect((m - cm).value).to eq(1093.5130000000000)
-      expect((m - cm).unit).to eq('m2')
+    let(:cp) { DynamicViscosity.new 1093.613, 'cp' }
+    let(:poise) { DynamicViscosity.new 1000, 'poise' }
+    it 'return -0.98906387e5 cp' do
+      expect((cp - poise).value).to eq(-0.98906387e5)
+      expect((cp - poise).unit).to eq('cp')
     end
 
-    it 'return -10935130.0cm2' do
-      expect((cm - m).value).to eq(-10935130.0)
-      expect((cm - m).unit).to eq('cm2')
+    it 'return 0.98906387e3 poise' do
+      expect((poise - cp).value).to eq(0.98906387e3)
+      expect((poise - cp).unit).to eq('poise')
     end
   end
 end
