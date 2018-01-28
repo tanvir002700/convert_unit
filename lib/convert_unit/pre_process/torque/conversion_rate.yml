@@ -1,0 +1,20 @@
+nm:
+  nm: 1
+  kgfm: 0.101972
+  ftlb: 0.737561
+  inlb: 8.850732
+kgfm:
+  nm: 9.80665
+  kgfm: 1
+  ftlb: 7.233003
+  inlb: 86.79603
+ftlb:
+  nm: 1.35582
+  kgfm: 0.138255
+  ftlb: 1
+  inlb: 12
+inlb:
+  nm: 0.112985
+  kgfm: 0.011521
+  ftlb: 0.083333
+  inlb: 1
