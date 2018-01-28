@@ -20,61 +20,60 @@ module ConvertUnit
 
     context 'initiate object with valid value' do
       it 'not raise any error' do
-        expect { Torque.new(1, 'cm2') }.to_not raise_error
+        expect { Torque.new(1, 'nm') }.to_not raise_error
       end
     end
 
     context 'initiate object with short form of unit' do
       it 'not raise any error' do
-        expect { Torque.new(1, 'm2') }.to_not raise_error
+        expect { Torque.new(1, 'kgfm') }.to_not raise_error
       end
     end
   end
 
   describe '.load_units_symbol' do
     it 'return ruby hash of length unit symbol form' do
-      expect(Torque::UNITS_SYMBOL).to eq('meter_square' => 'm2', 'centimeter_square' => 'cm2',
-                                       'inch_square' => 'in2', 'foot_square' => 'ft2',
-                                       'yard_square' => 'yd2')
+      expect(Torque::UNITS_SYMBOL).to eq('newton_meter' =>'nm', 'kilogram_force_meter'=>'kgfm',
+                                         'foot_pound' => 'ftlb', 'inch_pound' => 'inlb')
     end
   end
 
   describe '.load_units' do
     it 'return list of valid units' do
-      expect(Torque::UNITS).to eq(%w[mm2 cm2 m2 in2 ft2 yd2])
+      expect(Torque::UNITS).to eq(%w[nm kgfm ftlb inlb])
     end
   end
 
   describe 'check equal method' do
-    let(:l1) { Torque.new 3.1415678, 'mm2' }
-    let(:l2) { Torque.new 3.1415678, 'ft2' }
+    let(:l1) { Torque.new 3.1415678, 'nm' }
+    let(:l2) { Torque.new 3.1415678, 'kgfm' }
 
     it 'not equal' do
       expect(l1 == l2).to eq(false)
     end
 
     it 'is equal' do
-      l3 = l1.to 'ft2'
+      l3 = l1.to 'kgfm'
       expect(l1 == l3).to eq(true)
     end
 
     it 'is equal' do
-      l4 = l2.to 'mm2'
+      l4 = l2.to 'inlb'
       expect(l4 == l2).to eq(true)
     end
   end
 
   describe 'check === method' do
-    let(:l1) { Torque.new 1093.613, 'in2' }
-    let(:l2) { Torque.new 39370.08, 'ft2' }
-    let(:l3) { Torque.new 1093.613, 'in2' }
+    let(:l1) { Torque.new 1093.613, 'nm' }
+    let(:l2) { Torque.new 39370.08, 'ftlb' }
+    let(:l3) { Torque.new 1093.613, 'nm' }
 
     it 'not equal' do
       expect(l1 === l2).to eq(false)
     end
 
     it 'is not equal' do
-      l4 = l1.to 'mm2'
+      l4 = l1.to 'kgfm'
       expect(l3 === l4).to eq(false)
     end
 
@@ -84,30 +83,30 @@ module ConvertUnit
   end
 
   describe 'check + method' do
-    let(:m) { Torque.new 1093.613, 'm2' }
-    let(:cm) { Torque.new 1000, 'cm2' }
-    it 'return 1093.713 m2' do
-      expect((m + cm).value).to eq(1093.713)
-      expect((m + cm).unit).to eq('m2')
+    let(:v1) { Torque.new 1093.613, 'nm' }
+    let(:v2) { Torque.new 1000, 'kgfm' }
+    it 'return 0.10900262999999999e5 nm' do
+      expect((v1 + v2).value.to_f).to eq(0.10900262999999999e5)
+      expect((v1 + v2).unit).to eq('nm')
     end
 
-    it 'return 10937130.0 m2' do
-      expect((cm + m).value).to eq(10937130.0)
-      expect((cm + m).unit).to eq('cm2')
+    it 'return 0.1111517904836e4 kgfm' do
+      expect((v2 + v1).value).to eq(0.1111517904836e4)
+      expect((v2 + v1).unit).to eq('kgfm')
     end
   end
 
   describe 'check - method' do
-    let(:m) { Torque.new 1093.613, 'm2' }
-    let(:cm) { Torque.new 1000, 'cm2' }
-    it 'return 1093.5130000000001 m2' do
-      expect((m - cm).value).to eq(1093.5130000000000)
-      expect((m - cm).unit).to eq('m2')
+    let(:v1) { Torque.new 1093.613, 'nm' }
+    let(:v2) { Torque.new 1000, 'kgfm' }
+    it 'return -0.8713036999999999e4 nm' do
+      expect((v1 - v2).value.to_f).to eq(-0.8713036999999999e4)
+      expect((v1 - v2).unit).to eq('nm')
     end
 
-    it 'return -10935130.0cm2' do
-      expect((cm - m).value).to eq(-10935130.0)
-      expect((cm - m).unit).to eq('cm2')
+    it 'return 0.888482095164e3 kgfm' do
+      expect((v2 - v1).value.to_f).to eq(0.888482095164e3)
+      expect((v2 - v1).unit).to eq('kgfm')
     end
   end
 end
