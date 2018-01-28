@@ -1,0 +1,12 @@
+cp:
+  cp: 1
+  poise: 0.01
+  lb/ft·s: 0.000672
+poise:
+  cp: 100
+  poise: 1
+  lb/ft·s: 0.067197
+lb/ft·s:
+  cp: 1488.16
+  poise: 14.8816
+  lb/ft·s: 1
