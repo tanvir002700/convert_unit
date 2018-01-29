@@ -37,10 +37,21 @@ class Base
     "#{value.to_c} #{unit}"
   end
 
-  def to_r; end
-  def to_f; end
-  def to_i; end
-  def to_s; end
+  def to_r;
+    "#{value.to_r} #{unit}"
+  end
+
+  def to_f
+    "#{value.to_f} #{unit}"
+  end
+
+  def to_i
+    "#{value.to_i} #{unit}"
+  end
+
+  def to_s
+    "#{value.to_s} #{unit}"
+  end
 
   protected
 
