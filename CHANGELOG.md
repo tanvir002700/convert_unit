@@ -1,3 +1,13 @@
+## v1.0.0
+* Add MassFow
+* Add HighPressure
+* Add LowPressure
+* Add KinematicViscosity
+* Add Speed
+* Add DynamicViscosity
+* Add Torque
+* Add formatter method to_c, to_s, to_i, to_r, to_f
+
 ## v0.2.0
 * Change module required location
 * Add module self method for get available unit conversion class
