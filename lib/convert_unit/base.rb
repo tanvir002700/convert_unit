@@ -30,8 +30,17 @@ class Base
   end
 
   def inspect
-    "#{@value}#{@unit}"
+    "#{value} #{unit}"
   end
+
+  def to_c
+    "#{value.to_c} #{unit}"
+  end
+
+  def to_r; end
+  def to_f; end
+  def to_i; end
+  def to_s; end
 
   protected
 
